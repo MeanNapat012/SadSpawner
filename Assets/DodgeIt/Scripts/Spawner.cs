@@ -1,10 +1,12 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
 
 namespace SuperGame.DodgeIt
 {
     public class Spawner : MonoBehaviour
     {
+        public GameObject[] potion;
         [SerializeField] Obstacle prefab;
         [SerializeField] float targetDelay = 3f;
         [SerializeField] float randomOffset = 5f;
@@ -24,6 +26,8 @@ namespace SuperGame.DodgeIt
             }
             else
             {
+                int randomNum = Random.Range(0,3);
+                var newPotion = Instantiate(potion[randomNum], GetRandomSpawnPosition(), Quaternion.identity);
                 var newObstacle = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.identity);
                 currentDelay = targetDelay / DifficultyManager.Instance.DifficultyLevel;
             }
