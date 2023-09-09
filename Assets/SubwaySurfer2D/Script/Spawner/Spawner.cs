@@ -11,60 +11,68 @@ namespace SuperGame.SubwaySurfer2D
         [SerializeField] private GameObject fencePrefab;
         [SerializeField] private GameObject trainPrefab;
         [SerializeField] private GameObject coinsPrefab;
+        [SerializeField] private GameObject[] Potion;
         [SerializeField] private float delay;
-        // Start is called before the first frame update
+
         void Start()
         {
             Invoke("ObstructionRandom", delay / DifficultyManager.Instance.DifficultyLevel);
         }
 
-        // Update is called once per frame
         void ObstructionRandom()
         {
             delay = Random.Range(0.5f, 1.5f);
-            float ObstructionRandom = Random.Range(1,4);//3 is coins
-            float PositionRandom = Random.Range(1, 4);
+            int ObstructionRandom = Random.Range(1, 4); // 3 is coins
+            int PositionRandom = Random.Range(1, 4);
 
-            switch (PositionRandom)
+            GameObject selectedPrefab = null;
+
+            switch (ObstructionRandom)
             {
                 case 1:
-                    if (ObstructionRandom == 1)
-                        ObstructionSpawn(fencePrefab, spawnerLeft);
-                    else if (ObstructionRandom == 2)
-                        ObstructionSpawn(trainPrefab, spawnerLeft);
-                    else
-                        StartCoroutine(CoinsSpawn(spawnerLeft));
+                    selectedPrefab = fencePrefab;
                     break;
                 case 2:
-                    if (ObstructionRandom == 1)
-                        ObstructionSpawn(fencePrefab, spawnerMiddle);
-                    else if (ObstructionRandom == 2)
-                        ObstructionSpawn(trainPrefab, spawnerMiddle);
-                    else
-                        StartCoroutine(CoinsSpawn(spawnerMiddle));
+                    selectedPrefab = trainPrefab;
                     break;
                 case 3:
-                    if (ObstructionRandom == 1)
-                        ObstructionSpawn(fencePrefab, spawnerRight);
-                    else if (ObstructionRandom == 2)
-                        ObstructionSpawn(trainPrefab, spawnerRight);
-                    else
-                        StartCoroutine(CoinsSpawn(spawnerRight));
+                    SpawnPotion(Potion[Random.Range(0, Potion.Length)], GetSpawnPosition(PositionRandom));
                     break;
             }
+
+            if (selectedPrefab != null)
+            {
+                ObstructionSpawn(selectedPrefab, GetSpawnPosition(PositionRandom));
+            }
+
             Invoke("ObstructionRandom", delay);
         }
-        void ObstructionSpawn(GameObject Obstruction, GameObject spawnPosition)
+
+        void ObstructionSpawn(GameObject Obstruction, Vector3 spawnPosition)
         {
-            Instantiate(Obstruction, spawnPosition.transform.position, transform.rotation);
+            Instantiate(Obstruction, spawnPosition, Quaternion.identity);
         }
-        IEnumerator CoinsSpawn(GameObject spawnPosition)
+
+        void SpawnPotion(GameObject Potion, Vector3 spawnPosition)
         {
-            float CoinsAmountRandom = Random.Range(1, 5);
-            for (float CoinsNumber = 0; CoinsNumber < CoinsAmountRandom; CoinsNumber++)
+            if (Potion != null)
             {
-                yield return new WaitForSeconds(0.2f);
-                Instantiate(coinsPrefab, spawnPosition.transform.position, transform.rotation);
+                Instantiate(Potion, spawnPosition, Quaternion.identity);
+            }
+        }
+
+        Vector3 GetSpawnPosition(int position)
+        {
+            switch (position)
+            {
+                case 1:
+                    return spawnerLeft.transform.position;
+                case 2:
+                    return spawnerMiddle.transform.position;
+                case 3:
+                    return spawnerRight.transform.position;
+                default:
+                    return Vector3.zero;
             }
         }
     }
