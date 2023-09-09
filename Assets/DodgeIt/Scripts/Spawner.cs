@@ -6,7 +6,7 @@ namespace SuperGame.DodgeIt
 {
     public class Spawner : MonoBehaviour
     {
-        public GameObject[] potion;
+        public GameObject[] potion; // เก็บข้อมูลขวดยา เป็น Array
         [SerializeField] Obstacle prefab;
         [SerializeField] float targetDelay = 3f;
         [SerializeField] float randomOffset = 5f;
@@ -26,8 +26,8 @@ namespace SuperGame.DodgeIt
             }
             else
             {
-                int randomNum = Random.Range(0,3);
-                var newPotion = Instantiate(potion[randomNum], GetRandomSpawnPosition(), Quaternion.identity);
+                int randomNum = Random.Range(0,3); // สุ่มขวดยาที่จะออกมา
+                var newPotion = Instantiate(potion[randomNum], GetRandomSpawnPosition(), Quaternion.identity); //Spawn ยาออกมา
                 var newObstacle = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.identity);
                 currentDelay = targetDelay / DifficultyManager.Instance.DifficultyLevel;
             }
