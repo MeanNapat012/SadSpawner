@@ -52,6 +52,21 @@ namespace SuperGame.DodgeIt
             currentHealthText.text = "Health : " + currentHealth;
         }
 
+        public void PlayerHeal()
+        {
+             if (currentHealth >= 5)
+                return;
+
+            currentHealth ++;
+            RefreshHealth();
+        }
+
+
+        public void PlayerPoisoned()
+        {
+            
+        }
+
         void OnTriggerEnter2D(Collider2D col)
         {
             if (col.name == "GameOver")
