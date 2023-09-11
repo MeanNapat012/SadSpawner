@@ -12,13 +12,13 @@ namespace SuperGame.DodgeIt
         [SerializeField] float jumpForce = 2f;
 
         [SerializeField] int currentHealth = 5;
-        [SerializeField] GameObject gameOverObj;
-        [SerializeField] TMP_Text currentHealthText;
+        //[SerializeField] GameObject gameOverObj;
+        //[SerializeField] TMP_Text currentHealthText;
     
         // Start is called before the first frame update
         void Start()
         {
-            RefreshHealth();
+            //RefreshHealth();
         }
 
         // Update is called once per frame
@@ -32,7 +32,7 @@ namespace SuperGame.DodgeIt
             rigidbody.AddForce(moveDirection * moveSpeed);
         }
 
-        public void TakeDamage()
+        /*public void TakeDamage()
         {
             if (currentHealth <= 0)
                 return;
@@ -45,12 +45,12 @@ namespace SuperGame.DodgeIt
             }
 
             RefreshHealth();
-        }
+        }*/
 
-        void RefreshHealth()
+        /*void RefreshHealth()
         {
             currentHealthText.text = "Health : " + currentHealth;
-        }
+        }*/
 
         void OnTriggerEnter2D(Collider2D col)
         {

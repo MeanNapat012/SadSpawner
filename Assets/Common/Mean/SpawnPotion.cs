@@ -10,7 +10,7 @@ namespace  SuperGame
     {
         public GameObject[] Potion;
         [SerializeField] float targetDelay = 3f;
-        [SerializeField] float randomOffset = 5f;
+        [SerializeField] float randomOffset = 5f ;
     
         float currentDelay;
         protected override void InitAfterAwake()

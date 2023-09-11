@@ -7,12 +7,12 @@ namespace SuperGame.FlappyBird
     public class ColumnDamage : MonoBehaviour
     {
         private float damage = 1f;
-        private Hp playerHealth;
+        Health playerHealth;
         public float moveSpeed = 5f;
 
         void Start()
         {
-            playerHealth = PlayerManager.Instance.GetPlayer().GetComponent<Hp>();
+            playerHealth = PlayerManager.Instance.GetPlayer().GetComponent<Health>();
         }
 
         void Update()
@@ -24,7 +24,7 @@ namespace SuperGame.FlappyBird
         {
             if (other.tag == "Player")
             {
-                playerHealth.TakeDamage(damage);
+                playerHealth.TakeDamage();
                 Debug.Log("Hit! Player takes 1 damage");
             }
         }

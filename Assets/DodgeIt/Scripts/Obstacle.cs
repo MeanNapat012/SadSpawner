@@ -18,7 +18,7 @@ namespace SuperGame.DodgeIt
 
         void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.TryGetComponent<Player>(out var player))
+            if (col.TryGetComponent<Health>(out var player))
             {
                 player.TakeDamage();
             }
