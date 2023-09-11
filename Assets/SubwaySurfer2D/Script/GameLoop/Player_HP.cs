@@ -27,7 +27,7 @@ namespace SuperGame.SubwaySurfer2D
 
         }
 
-        void OnCollisionEnter2D(Collision2D other)
+        /*void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.tag == "Train")
             {
@@ -61,9 +61,9 @@ namespace SuperGame.SubwaySurfer2D
                     GameManager.Instance.Lose();
                 }
             }
-        }
+        }*/
 
-        public void TakeDamage()
+        /*public void TakeDamage()
         {
             playerHealth--;
             DamageEffectPlayer.Instance.PlayOn(renderer);
@@ -73,7 +73,7 @@ namespace SuperGame.SubwaySurfer2D
             }
 
             HealthUI();
-        }
+        }*/
 
         public void GetCoins()
         {
