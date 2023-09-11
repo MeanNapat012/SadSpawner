@@ -1,20 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
-using System.Collections.Generic;
+using PhEngine.Core;
 
-namespace SuperGame.DodgeIt
+namespace  SuperGame
 {
-    public class Spawner : MonoBehaviour
+    public class SpawnPotion : Singleton<SpawnPotion>
     {
-        //public GameObject[] potion; // เก็บข้อมูลขวดยา เป็น Array
-        [SerializeField] Obstacle prefab;
+        public GameObject[] Potion;
         [SerializeField] float targetDelay = 3f;
         [SerializeField] float randomOffset = 5f;
     
         float currentDelay;
-        void Start()
+        protected override void InitAfterAwake()
         {
-        
+            
         }
 
         // Update is called once per frame
@@ -26,16 +27,17 @@ namespace SuperGame.DodgeIt
             }
             else
             {
-                //int randomNum = Random.Range(0,3); // สุ่มขวดยาที่จะออกมา
-                //var newPotion = Instantiate(potion[randomNum], GetRandomSpawnPosition(), Quaternion.identity); //Spawn ยาออกมา
-                var newObstacle = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.identity);
+                int randomNum = Random.Range(0,3); // สุ่มขวดยาที่จะออกมา
+                var newPotion = Instantiate(Potion[randomNum], GetRandomSpawnPotion(), Quaternion.identity); //Spawn ยาออกมา
                 currentDelay = targetDelay / DifficultyManager.Instance.DifficultyLevel;
             }
         }
 
-        Vector3 GetRandomSpawnPosition()
+        Vector3 GetRandomSpawnPotion()
         {
             return new Vector3(transform.position.x + Random.Range(-randomOffset, randomOffset), transform.position.y, transform.position.z);
+     
         }
     }
+
 }
