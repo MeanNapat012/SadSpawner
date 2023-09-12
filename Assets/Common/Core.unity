@@ -2604,11 +2604,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602366010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d4732ce85f40f19983b90769112808, type: 3}
+  m_Script: {fileID: 11500000, guid: 8af9a6e437cb042428512be9653e4ea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   difficultyLevel: 1
   difficultyUI: {fileID: 663842208}
+  healthPotionSpawnDelay: 1
+  armorSpawnDelay: 1
+  poisonSpawnDelay: 1
 --- !u!1 &1633822921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2978,10 +2981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae12083c4c78334fa526d41238a2a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Potion:
-  - {fileID: 105292369819420497, guid: dcba4753acbdda74ba191112ee0446f1, type: 3}
-  - {fileID: 105292369819420497, guid: c52ce755c3238074eb5ee44d3bf9553f, type: 3}
-  - {fileID: 105292369819420497, guid: 4625ffc6dc7b5234d8447e126f316a6a, type: 3}
+  HealthPotion: {fileID: 105292369819420497, guid: c52ce755c3238074eb5ee44d3bf9553f, type: 3}
+  Armor: {fileID: 105292369819420497, guid: dcba4753acbdda74ba191112ee0446f1, type: 3}
+  Poison: {fileID: 105292369819420497, guid: 4625ffc6dc7b5234d8447e126f316a6a, type: 3}
   targetDelay: 3
   randomOffset: 5
 --- !u!4 &1930468596
