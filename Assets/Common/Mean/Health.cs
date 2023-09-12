@@ -9,6 +9,7 @@ namespace SuperGame
     public class Health : MonoBehaviour
     {
         [SerializeField] int MaxHealth = 5;
+        public int CurrentHealth => currentHealth;
         [SerializeField] int currentHealth = 5;
         [SerializeField] SpriteRenderer renderer;
 
@@ -21,14 +22,6 @@ namespace SuperGame
         {
             currentHealth = MaxHealth;
             RefreshHealth();        
-        }
-
-        void Upate()
-        {
-            if(currentHealth <= 0)
-            {
-                //ให้มึงลองหาที่ทำให้เกมมันจบ ลองดูนะ ไอเปา
-            }
         }
 
         
@@ -74,6 +67,11 @@ namespace SuperGame
             currentHealth--;
             DamageEffectPlayer.Instance.PlayOn(renderer);
             RefreshHealth(); 
+
+            if(currentHealth <= 0) 
+            {
+                GameManager.Instance.Lose();
+            }
         }
 
         void RefreshHealth()
