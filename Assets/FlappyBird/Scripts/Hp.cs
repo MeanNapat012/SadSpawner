@@ -5,6 +5,7 @@ using UnityEngine;
 namespace SuperGame.FlappyBird
 {
 
+/*
     public class Hp : MonoBehaviour
     {
         public float hp;
@@ -66,4 +67,5 @@ namespace SuperGame.FlappyBird
             spriteRenderer.color = originalColor; // Revert to original color
         }
     }
+    */
 }

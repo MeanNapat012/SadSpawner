@@ -5,17 +5,17 @@ namespace SuperGame.DodgeIt
     public class Player : MonoBehaviour
     {
         [SerializeField] Rigidbody2D rigidbody;
-
+        
         public Health Health => health;
         [SerializeField] Health health;
-
+        
         [SerializeField] float moveSpeed = 5f;
         [SerializeField] float jumpForce = 2f;
 
         // Update is called once per frame
         void Update()
         {
-            if (Health.CurrentHealth <= 0)
+            if (health.CurrentHealth <= 0)
                 return;
 
             var horizontalInput = InputManager.Instance.HorizontalInput;

@@ -1,33 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using SuperGame.SubwaySurfer2D;
 using TMPro;
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace SuperGame.SubwaySurfer2D
+namespace SuperGame
 {
-    public class Player_HP : MonoBehaviour
+    public class Health : MonoBehaviour
     {
-        [SerializeField] PlayerMovement move;
+        [SerializeField] int MaxHealth = 5;
+        public int CurrentHealth => currentHealth;
+        [SerializeField] int currentHealth = 5;
         [SerializeField] SpriteRenderer renderer;
-        public GameObject Player;
-        public int playerHealth = 5;
-        public TMP_Text HPText;
-        public int coinScore = 0;
-        public TMP_Text scoreText;
-        // Start is called before the first frame update
+
+        [Header("UI")]
+        [SerializeField] TMP_Text healthText;
+
+        [SerializeField] PlayerMovement move;
+
         void Start()
         {
-            HealthUI();
-            CoinScoreUI();
+            currentHealth = MaxHealth;
+            RefreshHealth();        
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        /*void OnCollisionEnter2D(Collision2D other)
+        
+        void OnCollisionEnter2D(Collision2D other) //Subway
         {
             if (other.gameObject.tag == "Train")
             {
@@ -61,35 +59,26 @@ namespace SuperGame.SubwaySurfer2D
                     GameManager.Instance.Lose();
                 }
             }
-        }*/
+        }
 
-        /*public void TakeDamage()
+        public void TakeDamage()
         {
-            playerHealth--;
+            if(currentHealth <= 0) return;
+            currentHealth--;
             DamageEffectPlayer.Instance.PlayOn(renderer);
-            if (playerHealth == 0)
+            RefreshHealth(); 
+
+            if(currentHealth <= 0) 
             {
                 GameManager.Instance.Lose();
             }
-
-            HealthUI();
-        }*/
-
-        public void GetCoins()
-        {
-            coinScore = coinScore + 5;
-            AudioManager.Instance.Play("coin");
-            CoinScoreUI();
         }
 
-        void HealthUI()
+        void RefreshHealth()
         {
-            HPText.text = "Life :" + playerHealth;
+            healthText.text = "Health : " + currentHealth;
         }
 
-        void CoinScoreUI()
-        {
-            scoreText.text = "Coin :" + coinScore;
-        }
     }
+
 }
