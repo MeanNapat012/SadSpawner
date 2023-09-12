@@ -12,6 +12,8 @@ namespace SuperGame
         public int CurrentHealth => currentHealth;
         [SerializeField] int currentHealth = 5;
         [SerializeField] SpriteRenderer renderer;
+        [SerializeField] float timenoDamage = 0.5f;
+        [SerializeField] bool NoDamage = false;
 
         [Header("UI")]
         [SerializeField] TMP_Text healthText;
@@ -64,7 +66,9 @@ namespace SuperGame
         public void TakeDamage()
         {
             if(currentHealth <= 0) return;
-            currentHealth--;
+            if(NoDamage == false){
+                currentHealth--;
+            }
             DamageEffectPlayer.Instance.PlayOn(renderer);
             RefreshHealth(); 
 
@@ -79,6 +83,28 @@ namespace SuperGame
             healthText.text = "Health : " + currentHealth;
         }
 
-    }
+        public void PlayerShield(){
+           NoDamage = true;
+           Debug.Log("NoDamge");
+           }
+           void Update(){
+            if(NoDamage == true){
+            timenoDamage -= Time.deltaTime;
 
+                if(timenoDamage <= 0){
+                Debug.Log("Damage");
+                timenoDamage = 0.5f;
+                NoDamage = false;
+            }
+           }
+           }
+        public void PlayerHeal(){
+            if (currentHealth >= 5)
+                return;
+
+            currentHealth++;
+            RefreshHealth();
+        }
+       
+}
 }
