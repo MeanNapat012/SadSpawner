@@ -543,6 +543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f648c644202774df48fc7d84d389ec11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  potion:
+  - {fileID: 105292369819420497, guid: dcba4753acbdda74ba191112ee0446f1, type: 3}
+  - {fileID: 105292369819420497, guid: c52ce755c3238074eb5ee44d3bf9553f, type: 3}
+  - {fileID: 105292369819420497, guid: 4625ffc6dc7b5234d8447e126f316a6a, type: 3}
   prefab: {fileID: 7845855899985338965, guid: 59fc88788d2284e67818311f7b5c5b60, type: 3}
   targetDelay: 1
   randomOffset: 5

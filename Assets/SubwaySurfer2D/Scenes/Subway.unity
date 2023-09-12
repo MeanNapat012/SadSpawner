@@ -254,6 +254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9330bfedc7660bd49bd2dfeb4dbe3148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Potion:
+  - {fileID: 105292369819420497, guid: dcba4753acbdda74ba191112ee0446f1, type: 3}
+  - {fileID: 105292369819420497, guid: c52ce755c3238074eb5ee44d3bf9553f, type: 3}
+  - {fileID: 105292369819420497, guid: 4625ffc6dc7b5234d8447e126f316a6a, type: 3}
   spawnerLeft: {fileID: 2007833314}
   spawnerMiddle: {fileID: 1977263091}
   spawnerRight: {fileID: 619579662}
@@ -473,6 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit

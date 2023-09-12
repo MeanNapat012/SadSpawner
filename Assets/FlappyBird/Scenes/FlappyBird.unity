@@ -269,7 +269,7 @@ MonoBehaviour:
   immunityDuration: 2
 --- !u!95 &175193491
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -286,7 +286,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &175193492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,6 +1660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1837,6 +1839,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pillarPrefab: {fileID: 6160962351394351637, guid: a2c807c053decf147869284fd946a0df, type: 3}
+  Potion:
+  - {fileID: 105292369819420497, guid: ac2ff4e0be0558e4085b708e5a570e8a, type: 3}
+  - {fileID: 105292369819420497, guid: 0549ae4f71ab0394ab8665963b3480ad, type: 3}
+  - {fileID: 105292369819420497, guid: 3db893a311f34004fa3f32d0d2a9cbd1, type: 3}
   gapSize: 7
   spawnInterval: 1.5
   destroyDistance: 22
