@@ -2072,6 +2072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954117968}
   - component: {fileID: 954117967}
+  - component: {fileID: 954117969}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -2106,6 +2107,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954117969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954117966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d25912e0e5a4c154d96c0f2038c8e810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalKey: Horizontal
+  leftKey: 276
+  rightKey: 275
+  jumpKeyList: 770000002000000011010000
 --- !u!1 &1181604140
 GameObject:
   m_ObjectHideFlags: 0
@@ -2981,9 +2998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae12083c4c78334fa526d41238a2a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPotion: {fileID: 105292369819420497, guid: c52ce755c3238074eb5ee44d3bf9553f, type: 3}
-  Armor: {fileID: 105292369819420497, guid: dcba4753acbdda74ba191112ee0446f1, type: 3}
-  Poison: {fileID: 105292369819420497, guid: 4625ffc6dc7b5234d8447e126f316a6a, type: 3}
+  HealthPotion: {fileID: 6612558670051747355, guid: 3f02d1984c3eb5a42b083e87ccc7bd18, type: 3}
+  Armor: {fileID: 512347417181612671, guid: a5e2b9d8b20de6247b45eaf89349d737, type: 3}
+  Poison: {fileID: 7230443582686915751, guid: ee90d1f88f378bd4cb0ce0edf65dbbca, type: 3}
   targetDelay: 3
   randomOffset: 5
 --- !u!4 &1930468596

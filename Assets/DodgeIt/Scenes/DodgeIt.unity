@@ -317,7 +317,7 @@ Transform:
   m_Children:
   - {fileID: 359424806}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &456221715
 GameObject:
@@ -428,7 +428,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -512,7 +512,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &973369294
 GameObject:
@@ -543,10 +543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f648c644202774df48fc7d84d389ec11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potion:
-  - {fileID: 105292369819420497, guid: dcba4753acbdda74ba191112ee0446f1, type: 3}
-  - {fileID: 105292369819420497, guid: c52ce755c3238074eb5ee44d3bf9553f, type: 3}
-  - {fileID: 105292369819420497, guid: 4625ffc6dc7b5234d8447e126f316a6a, type: 3}
   prefab: {fileID: 7845855899985338965, guid: 59fc88788d2284e67818311f7b5c5b60, type: 3}
   targetDelay: 1
   randomOffset: 5
@@ -563,7 +559,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1120796290
 GameObject:
@@ -623,7 +619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Health : 5'
+  m_text: 'Health : '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -713,9 +709,10 @@ GameObject:
   - component: {fileID: 1636104579}
   - component: {fileID: 1636104578}
   - component: {fileID: 1636104577}
+  - component: {fileID: 1636104582}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -733,12 +730,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 1636104579}
-  renderer: {fileID: 1636104580}
+  health: {fileID: 1636104582}
   moveSpeed: 20
   jumpForce: 2
-  currentHealth: 5
-  gameOverObj: {fileID: 2086226474}
-  currentHealthText: {fileID: 1120796292}
 --- !u!61 &1636104578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -851,8 +845,27 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1636104582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636104576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9aebdcc97945f42a09ff95ccdb05dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 5
+  currentHealth: 5
+  renderer: {fileID: 1636104580}
+  timenoDamage: 1.5
+  NoDamage: 0
+  healthText: {fileID: 1120796292}
+  move: {fileID: 0}
 --- !u!1 &1890962824
 GameObject:
   m_ObjectHideFlags: 0

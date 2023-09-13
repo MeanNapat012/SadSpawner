@@ -39,7 +39,7 @@ namespace SuperGame.FlappyBird
         public GameObject startButton;
         public GameObject endMenu;
         public TextMeshProUGUI hp_text;
-        public Hp life_point;
+        public Health life_point;
 
         public void StartGame()
         {
@@ -58,9 +58,6 @@ namespace SuperGame.FlappyBird
             GameManager.Instance.Lose();
         }
 
-        private void Update()
-        {
-            hp_text.SetText("Current HP: " + life_point.currenthp.ToString());
-        }
+        
     }
 }

@@ -11,7 +11,7 @@ namespace  SuperGame
         public GameObject Armor;
         public GameObject Poison;
         [SerializeField] float targetDelay = 3f;
-        [SerializeField] float randomOffset = 5f;
+        [SerializeField] float randomOffset = 5f ;
     
         float currentDelay;
         protected override void InitAfterAwake()
